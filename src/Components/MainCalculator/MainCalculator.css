@@ -1,0 +1,21 @@
+.mainCalcArea {
+    width: 320px;
+    background: blue;
+    height: 500px;
+}
+
+.display {
+    width: 320px;
+    background: green;
+    height: 50px;
+    display: flex;
+    /* text-align: right; */
+    align-items: center;
+    justify-items: right;
+    /* justify-content: right; */
+}
+.display>p {
+    text-align: end;
+    /* text-align: right; */
+    font-size: 20px;
+}
