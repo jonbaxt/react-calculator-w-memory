@@ -1,21 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+@import url('https://fonts.googleapis.com/css?family=Mukta');
+
 .mainCalcArea {
     width: 320px;
-    background: blue;
-    height: 500px;
+    font-family: 'Mukta', sans-serif;
+    background: rgb(192,192,192);
+    box-shadow: 1px 2px 2px rgb(47,79,79);
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .display {
-    width: 320px;
-    background: green;
-    height: 50px;
+    width: 310px;
+    background: rgb(240,248,255);
+    height: 25px;
     display: flex;
-    /* text-align: right; */
-    align-items: center;
-    justify-items: right;
-    /* justify-content: right; */
+    align-items: right;
+    justify-content: space-between;
 }
 .display>p {
-    text-align: end;
-    /* text-align: right; */
+    font-family: 'Share Tech Mono', monospace;
     font-size: 20px;
+    margin-top: 3px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.rowFlex {
+    display: flex;
+    flex-direction: row;
+}
+#rowJustify {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.title {
+    text-shadow: 1px 1px 1px white;
+}
+.rowFlex>button {
+    cursor: pointer;
+    width:78px;
+    height:78px;
+    background: rgb(119,136,153);
+    font-family: 'Mukta', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+#buttonFormat {
+    font-size: 15px;
+}
+.topBox {
+    width: 120px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    /* margin-top: 0px; */
+    background: rgba(153,76,0,0.6);
+    border: solid black 1px;
+}
+.barLine {
+    width: 2px;
+    height: 20px;
+    background: black;
+    margin-top: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
