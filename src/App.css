@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Mukta');
 
-/* .App {
-  text-align: center;
-} */
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  /* text-align: center; */
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

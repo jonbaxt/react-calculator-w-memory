@@ -87,7 +87,9 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { secondNumber: action.payload });
         case SET_SOLUTION:
             return Object.assign({}, state, { solution: action.payload });
-        case ADD_TO_SOLUTIIONS_ARRAY:
-            return Object.assign({}, state, { solutionsArray: [...solutionsArray, action.payload] });
+        // case ADD_TO_SOLUTIIONS_ARRAY:
+        //     return Object.assign({}, state, { solutionsArray: [...solutionsArray, action.payload] });
+        default: 
+            return state;
     }
 }
