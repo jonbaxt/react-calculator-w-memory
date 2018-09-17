@@ -12,6 +12,10 @@ class ResultsSection extends React.Component {
             <div className='resultsMain'>
                 <h1>Saved Results</h1>
                 <section className='resultsDialogue'>
+                    <p>2 + 2 = 4</p>
+                    <p>4 * 5 = 20</p>
+                    <p>10 + 10 = 20</p>
+                    <p>2 + 2 = 4</p>
 
                 </section>
             </div>
