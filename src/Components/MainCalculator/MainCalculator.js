@@ -19,6 +19,7 @@ class MainCalculator extends Component {
         this.subtractButton = this.subtractButton.bind(this);
         this.divideButton = this.divideButton.bind(this);
         this.timesButton = this.timesButton.bind(this);
+        this.equalButton = this.equalButton.bind(this);
     };
 
     handleDisplayAdd(newCharacter) {
@@ -105,8 +106,29 @@ class MainCalculator extends Component {
         this.props.setNumberDisplayScreen("0");
     }
 
+    equalButton() {
+        let secondNumberTemp = Number(this.props.numberDisplayScreen);
+        this.props.setSecondNumber(secondNumberTemp);
+        let solutionTemp = '';
+        if (this.props.currentOperator === '+'){
+            solutionTemp = this.props.firstNumber + secondNumberTemp;
+        } else if (this.props.currentOperator === '-'){
+            solutionTemp = this.props.firstNumber - secondNumberTemp;
+        } else if (this.props.currentOperator === 'X') {
+            solutionTemp = this.props.firstNumber * secondNumberTemp;
+        } else if (this.props.currentOperator === '/') {
+            solutionTemp = this.props.firstNumber / secondNumberTemp;
+        }
+
+
+        this.props.setSolution(solutionTemp);
+    }
 
     render() {
+        let equalShow = this.props.solution === "" ? '' : '=';
+        let keepSolutionButton = this.props.solution === '' ? '' : <button className='' onClick={()=> console.log('Keep It')} >Keep</button>
+        let deleteSolutionButton = this.props.solution === '' ? '' : 
+        <button className='' onClick={()=> console.log('Get rid of it')} >Ignore</button>
         return (
             <div className='mainCalcArea'>
                 <div id='rowJustify'>
@@ -134,6 +156,20 @@ class MainCalculator extends Component {
                         <div className='barLine' ></div>
                     </div>
                 </div>
+
+                <article className='display' 
+                // style={{ height: '100px'}}
+                >
+                    <p>{this.props.firstNumber}</p>
+                    <p>{this.props.currentOperator}</p>
+                    <p>{this.props.secondNumber}</p>
+                    <p>{equalShow}</p>
+                    <p>{this.props.solution}</p>
+                    <div>
+                    {keepSolutionButton}
+                    {deleteSolutionButton}
+                    </div>
+                </article>
 
                 <article className='display'>
                     <p>{this.props.operatorDisplayScreen}</p>
@@ -183,7 +219,7 @@ class MainCalculator extends Component {
                     <button onClick={() => console.log('Clicked Plus/Minus')}>+ / -</button>
                     <button onClick={() => this.handleDisplayAdd('0')}>0</button>
                     <button onClick={() => this.handleDisplayAdd('.')}>.</button>
-                    <button onClick={() => console.log('Clicked Equal')}>=</button>
+                    <button onClick={() => this.equalButton()}>=</button>
                 </span>
             </div>
         )

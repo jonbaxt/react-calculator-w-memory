@@ -6,7 +6,7 @@ const initialState = {
     firstNumber: '',
     secondNumber: '',
     solution: '',
-    solutionsArray: []
+    solutionsArray: ['2 + 2 = 4', '6 X 2 = 12', '2 - 1 = 1', '1 / 1 = 1', '6 + 4 = 10', '1 - 4 = -3', '10 / 2 = 5', '2 + 3 = 5']
 }
 
 const SET_NUMBER_DISPLAY_SCREEN = 'SET_NUMBER_DISPLAY_SCREEN';
